@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
@@ -39,3 +40,19 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
+class Bird(models.Model):
+    """Bird to be registered when found"""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+    name = models.CharField(max_length=255)
+    sciName = models.CharField(max_length=255)
+    region = models.CharField(max_length=255)
+    family = models.CharField(max_length=255)
+    order = models.CharField(max_length=255)
+    status = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
