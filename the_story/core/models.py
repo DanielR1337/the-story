@@ -56,3 +56,13 @@ class Bird(models.Model):
 
     def __str__(self):
         return self.name
+
+class Breeding(models.Model):
+    """Breeding contains questions to increase status level"""
+
+    question = models.TextField()
+    answer = models.CharField(max_length=255)
+    region = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.question

@@ -68,3 +68,15 @@ class ModelTests(TestCase):
         )
 
         self.assertEqual(str(bird), bird.name)
+
+    def test_create_breeding(self):
+        """Test creating breeding action."""
+        breeding = models.Breeding.objects.create(
+            question = "What is the scientific name of the Wild Turkey?",
+            answer = "	Meleagris gallopavo",
+                        region=[
+                "North America"
+            ]
+        )
+
+        self.assertEqual(str(breeding), breeding.question)

@@ -32,9 +32,11 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Family</th>
-                <th>Region</th>
                 <th>Scientific Name</th>
+                <th>Region</th>
+                <th>Family</th>
+                <th>Order</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -42,9 +44,11 @@
                 <tr>
                     <td>{{ bird.id }}</td>
                     <td>{{ bird.name }}</td>
-                    <td>{{ bird.family }}</td>
-                    <td>{{ bird.region }}</td>
                     <td>{{ bird.sciName }}</td>
+                    <td>{{ bird.region }}</td>
+                    <td>{{ bird.family }}</td>
+                    <td>{{ bird.order }}</td>
+                    <td>{{ bird.status }}</td>
                 </tr>
             {% empty %}
                 <tr>
